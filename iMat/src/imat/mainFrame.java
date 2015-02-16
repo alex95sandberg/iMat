@@ -28,71 +28,90 @@ public class mainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        layoutPanel = new javax.swing.JPanel();
+        footerPlaceholder = new javax.swing.JLabel();
+        navigationTabbedPane = new javax.swing.JTabbedPane();
+        welcomePanel = new javax.swing.JPanel();
+        welcomePlaceholder = new javax.swing.JLabel();
+        headerPlaceholder = new javax.swing.JLabel();
         menu = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
+        file = new javax.swing.JMenu();
         exit = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        edit = new javax.swing.JMenu();
         undo = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        navigate = new javax.swing.JMenu();
         view = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
+        zoomIn = new javax.swing.JMenuItem();
+        zoomOut = new javax.swing.JMenuItem();
+        fullscreen = new javax.swing.JCheckBoxMenuItem();
+        minimize = new javax.swing.JMenuItem();
         about = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Footer");
+        layoutPanel.setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setLayout(new java.awt.CardLayout());
+        footerPlaceholder.setText("Footer");
+        layoutPanel.add(footerPlaceholder, java.awt.BorderLayout.PAGE_END);
 
-        jLabel2.setText("Navigation");
+        welcomePanel.setPreferredSize(new java.awt.Dimension(100, 100));
+        welcomePanel.setLayout(new java.awt.CardLayout());
+
+        welcomePlaceholder.setText("Välkommen [namn]");
+        welcomePanel.add(welcomePlaceholder, "card2");
+
+        navigationTabbedPane.addTab("Välkommen", welcomePanel);
+
+        layoutPanel.add(navigationTabbedPane, java.awt.BorderLayout.CENTER);
+
+        headerPlaceholder.setText("[logga] [sök] [min profil]");
+        layoutPanel.add(headerPlaceholder, java.awt.BorderLayout.PAGE_START);
 
         menu.setName("iMat"); // NOI18N
 
-        jMenu3.setText("Arkiv");
+        file.setText("Arkiv");
 
         exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
         exit.setText("Avsluta");
-        jMenu3.add(exit);
+        file.add(exit);
 
-        menu.add(jMenu3);
+        menu.add(file);
 
-        jMenu4.setText("Redigera");
+        edit.setText("Redigera");
 
         undo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
         undo.setText("Ångra");
-        jMenu4.add(undo);
+        edit.add(undo);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem5.setText("Gör om");
-        jMenu4.add(jMenuItem5);
+        edit.add(jMenuItem5);
 
-        menu.add(jMenu4);
+        menu.add(edit);
 
-        jMenu1.setText("Navigera");
-        menu.add(jMenu1);
+        navigate.setText("Navigera");
+        menu.add(navigate);
 
         view.setText("Vy");
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_PLUS, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Zooma in");
-        view.add(jMenuItem3);
+        zoomIn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_PLUS, java.awt.event.InputEvent.CTRL_MASK));
+        zoomIn.setText("Zooma in");
+        view.add(zoomIn);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_MINUS, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Zooma ut");
-        view.add(jMenuItem2);
+        zoomOut.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_MINUS, java.awt.event.InputEvent.CTRL_MASK));
+        zoomOut.setText("Zooma ut");
+        view.add(zoomOut);
 
-        jCheckBoxMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F11, 0));
-        jCheckBoxMenuItem2.setSelected(true);
-        jCheckBoxMenuItem2.setText("Fullskärm");
-        view.add(jCheckBoxMenuItem2);
+        fullscreen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F11, 0));
+        fullscreen.setText("Fullskärm");
+        view.add(fullscreen);
+
+        minimize.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SPACE, java.awt.event.InputEvent.ALT_MASK));
+        minimize.setText("Minimera");
+        view.add(minimize);
 
         menu.add(view);
 
@@ -112,18 +131,11 @@ public class mainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(layoutPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(layoutPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
         );
 
         pack();
@@ -166,21 +178,25 @@ public class mainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu about;
+    private javax.swing.JMenu edit;
     private javax.swing.JMenuItem exit;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu file;
+    private javax.swing.JLabel footerPlaceholder;
+    private javax.swing.JCheckBoxMenuItem fullscreen;
+    private javax.swing.JLabel headerPlaceholder;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel layoutPanel;
     private javax.swing.JMenuBar menu;
+    private javax.swing.JMenuItem minimize;
+    private javax.swing.JMenu navigate;
+    private javax.swing.JTabbedPane navigationTabbedPane;
     private javax.swing.JMenuItem undo;
     private javax.swing.JMenu view;
+    private javax.swing.JPanel welcomePanel;
+    private javax.swing.JLabel welcomePlaceholder;
+    private javax.swing.JMenuItem zoomIn;
+    private javax.swing.JMenuItem zoomOut;
     // End of variables declaration//GEN-END:variables
 }
