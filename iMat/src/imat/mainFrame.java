@@ -29,11 +29,17 @@ public class mainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         layoutPanel = new javax.swing.JPanel();
-        footerPlaceholder = new javax.swing.JLabel();
         navigationTabbedPane = new javax.swing.JTabbedPane();
         welcomePanel = new javax.swing.JPanel();
         welcomePlaceholder = new javax.swing.JLabel();
+        meatAndFishPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         headerPlaceholder = new javax.swing.JLabel();
+        shoppingCartPlaceholder = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         menu = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
         exit = new javax.swing.JMenuItem();
@@ -51,11 +57,9 @@ public class mainFrame extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(400, 400));
 
         layoutPanel.setLayout(new java.awt.BorderLayout());
-
-        footerPlaceholder.setText("Footer");
-        layoutPanel.add(footerPlaceholder, java.awt.BorderLayout.PAGE_END);
 
         welcomePanel.setPreferredSize(new java.awt.Dimension(100, 100));
         welcomePanel.setLayout(new java.awt.CardLayout());
@@ -65,10 +69,31 @@ public class mainFrame extends javax.swing.JFrame {
 
         navigationTabbedPane.addTab("Välkommen", welcomePanel);
 
+        meatAndFishPanel.setLayout(new java.awt.GridLayout(1, 0));
+
+        jLabel3.setText("Fläksfilé");
+        meatAndFishPanel.add(jLabel3);
+
+        jLabel4.setText("Lax");
+        meatAndFishPanel.add(jLabel4);
+
+        navigationTabbedPane.addTab("Kött & Fisk", meatAndFishPanel);
+
         layoutPanel.add(navigationTabbedPane, java.awt.BorderLayout.CENTER);
 
         headerPlaceholder.setText("[logga] [sök] [min profil]");
         layoutPanel.add(headerPlaceholder, java.awt.BorderLayout.PAGE_START);
+
+        shoppingCartPlaceholder.setText("ShoppingCart");
+        layoutPanel.add(shoppingCartPlaceholder, java.awt.BorderLayout.LINE_END);
+
+        jLabel1.setText("[om oss]");
+        jPanel1.add(jLabel1);
+
+        jLabel2.setText("[kontakt]");
+        jPanel1.add(jLabel2);
+
+        layoutPanel.add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
         menu.setName("iMat"); // NOI18N
 
@@ -131,11 +156,11 @@ public class mainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(layoutPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+            .addComponent(layoutPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(layoutPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+            .addComponent(layoutPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
         );
 
         pack();
@@ -181,17 +206,23 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JMenu edit;
     private javax.swing.JMenuItem exit;
     private javax.swing.JMenu file;
-    private javax.swing.JLabel footerPlaceholder;
     private javax.swing.JCheckBoxMenuItem fullscreen;
     private javax.swing.JLabel headerPlaceholder;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel layoutPanel;
+    private javax.swing.JPanel meatAndFishPanel;
     private javax.swing.JMenuBar menu;
     private javax.swing.JMenuItem minimize;
     private javax.swing.JMenu navigate;
     private javax.swing.JTabbedPane navigationTabbedPane;
+    private javax.swing.JLabel shoppingCartPlaceholder;
     private javax.swing.JMenuItem undo;
     private javax.swing.JMenu view;
     private javax.swing.JPanel welcomePanel;
