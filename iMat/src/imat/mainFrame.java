@@ -30,16 +30,23 @@ public class mainFrame extends javax.swing.JFrame {
 
         layoutPanel = new javax.swing.JPanel();
         navigationTabbedPane = new javax.swing.JTabbedPane();
-        welcomePanel = new javax.swing.JPanel();
-        welcomePlaceholder = new javax.swing.JLabel();
-        meatAndFishPanel = new javax.swing.JPanel();
+        meatAndFishTabPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        welcomeTabPanel = new javax.swing.JPanel();
+        welcomePanel = new javax.swing.JPanel();
+        welcomePlaceholder = new javax.swing.JLabel();
+        RecipeOfTheDayPlaceholder = new javax.swing.JLabel();
+        recipeOfTheDayPanel = new javax.swing.JPanel();
+        campaignPanel = new javax.swing.JPanel();
+        CampaignPlaceholder = new javax.swing.JLabel();
         headerPlaceholder = new javax.swing.JLabel();
-        shoppingCartPlaceholder = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        shoppingCartPlaceholder = new javax.swing.JLabel();
+        myListsPlaceholder = new javax.swing.JLabel();
         menu = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
         exit = new javax.swing.JMenuItem();
@@ -61,31 +68,86 @@ public class mainFrame extends javax.swing.JFrame {
 
         layoutPanel.setLayout(new java.awt.BorderLayout());
 
-        welcomePanel.setPreferredSize(new java.awt.Dimension(100, 100));
-        welcomePanel.setLayout(new java.awt.CardLayout());
-
-        welcomePlaceholder.setText("Välkommen [namn]");
-        welcomePanel.add(welcomePlaceholder, "card2");
-
-        navigationTabbedPane.addTab("Välkommen", welcomePanel);
-
-        meatAndFishPanel.setLayout(new java.awt.GridLayout(1, 0));
+        meatAndFishTabPanel.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel3.setText("Fläksfilé");
-        meatAndFishPanel.add(jLabel3);
+        meatAndFishTabPanel.add(jLabel3);
 
         jLabel4.setText("Lax");
-        meatAndFishPanel.add(jLabel4);
+        meatAndFishTabPanel.add(jLabel4);
 
-        navigationTabbedPane.addTab("Kött & Fisk", meatAndFishPanel);
+        navigationTabbedPane.addTab("Kött & Fisk", meatAndFishTabPanel);
+
+        welcomeTabPanel.setPreferredSize(new java.awt.Dimension(100, 100));
+
+        welcomePlaceholder.setText("Välkommen [namn]");
+
+        RecipeOfTheDayPlaceholder.setText("RecipeOfTheDay");
+
+        javax.swing.GroupLayout welcomePanelLayout = new javax.swing.GroupLayout(welcomePanel);
+        welcomePanel.setLayout(welcomePanelLayout);
+        welcomePanelLayout.setHorizontalGroup(
+            welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(welcomePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(welcomePlaceholder)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(RecipeOfTheDayPlaceholder)
+                .addContainerGap())
+        );
+        welcomePanelLayout.setVerticalGroup(
+            welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(welcomePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(welcomePlaceholder)
+                    .addComponent(RecipeOfTheDayPlaceholder))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        welcomeTabPanel.add(welcomePanel);
+
+        recipeOfTheDayPanel.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        javax.swing.GroupLayout recipeOfTheDayPanelLayout = new javax.swing.GroupLayout(recipeOfTheDayPanel);
+        recipeOfTheDayPanel.setLayout(recipeOfTheDayPanelLayout);
+        recipeOfTheDayPanelLayout.setHorizontalGroup(
+            recipeOfTheDayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        recipeOfTheDayPanelLayout.setVerticalGroup(
+            recipeOfTheDayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        welcomeTabPanel.add(recipeOfTheDayPanel);
+
+        CampaignPlaceholder.setText("Campaign");
+
+        javax.swing.GroupLayout campaignPanelLayout = new javax.swing.GroupLayout(campaignPanel);
+        campaignPanel.setLayout(campaignPanelLayout);
+        campaignPanelLayout.setHorizontalGroup(
+            campaignPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(campaignPanelLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(CampaignPlaceholder)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        campaignPanelLayout.setVerticalGroup(
+            campaignPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, campaignPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(CampaignPlaceholder))
+        );
+
+        welcomeTabPanel.add(campaignPanel);
+
+        navigationTabbedPane.addTab("Välkommen", welcomeTabPanel);
 
         layoutPanel.add(navigationTabbedPane, java.awt.BorderLayout.CENTER);
 
         headerPlaceholder.setText("[logga] [sök] [min profil]");
         layoutPanel.add(headerPlaceholder, java.awt.BorderLayout.PAGE_START);
-
-        shoppingCartPlaceholder.setText("ShoppingCart");
-        layoutPanel.add(shoppingCartPlaceholder, java.awt.BorderLayout.LINE_END);
 
         jLabel1.setText("[om oss]");
         jPanel1.add(jLabel1);
@@ -95,56 +157,80 @@ public class mainFrame extends javax.swing.JFrame {
 
         layoutPanel.add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
+        jPanel2.setLayout(new java.awt.GridLayout(0, 1));
+
+        shoppingCartPlaceholder.setText("ShoppingCart");
+        jPanel2.add(shoppingCartPlaceholder);
+
+        myListsPlaceholder.setText("MinaListor");
+        jPanel2.add(myListsPlaceholder);
+
+        layoutPanel.add(jPanel2, java.awt.BorderLayout.LINE_END);
+
         menu.setName("iMat"); // NOI18N
 
+        file.setMnemonic('a');
         file.setText("Arkiv");
 
         exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        exit.setMnemonic('a');
         exit.setText("Avsluta");
         file.add(exit);
 
         menu.add(file);
 
+        edit.setMnemonic('r');
         edit.setText("Redigera");
 
         undo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
+        undo.setMnemonic('\u00e5');
         undo.setText("Ångra");
         edit.add(undo);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setMnemonic('g');
         jMenuItem5.setText("Gör om");
         edit.add(jMenuItem5);
 
         menu.add(edit);
 
+        navigate.setMnemonic('n');
         navigate.setText("Navigera");
         menu.add(navigate);
 
+        view.setMnemonic('v');
         view.setText("Vy");
 
         zoomIn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_PLUS, java.awt.event.InputEvent.CTRL_MASK));
+        zoomIn.setMnemonic('i');
         zoomIn.setText("Zooma in");
         view.add(zoomIn);
 
         zoomOut.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_MINUS, java.awt.event.InputEvent.CTRL_MASK));
+        zoomOut.setMnemonic('u');
         zoomOut.setText("Zooma ut");
         view.add(zoomOut);
 
         fullscreen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F11, 0));
+        fullscreen.setMnemonic('f');
         fullscreen.setText("Fullskärm");
         view.add(fullscreen);
 
         minimize.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SPACE, java.awt.event.InputEvent.ALT_MASK));
+        minimize.setMnemonic('m');
         minimize.setText("Minimera");
         view.add(minimize);
 
         menu.add(view);
 
+        about.setMnemonic('o');
         about.setText("Om oss");
 
+        jMenuItem1.setMnemonic('k');
         jMenuItem1.setText("Kontakt");
         about.add(jMenuItem1);
 
+        jMenuItem4.setMnemonic('i');
         jMenuItem4.setText("iMat");
         about.add(jMenuItem4);
 
@@ -156,11 +242,11 @@ public class mainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(layoutPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
+            .addComponent(layoutPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(layoutPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+            .addComponent(layoutPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
         );
 
         pack();
@@ -202,7 +288,10 @@ public class mainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CampaignPlaceholder;
+    private javax.swing.JLabel RecipeOfTheDayPlaceholder;
     private javax.swing.JMenu about;
+    private javax.swing.JPanel campaignPanel;
     private javax.swing.JMenu edit;
     private javax.swing.JMenuItem exit;
     private javax.swing.JMenu file;
@@ -216,17 +305,21 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel layoutPanel;
-    private javax.swing.JPanel meatAndFishPanel;
+    private javax.swing.JPanel meatAndFishTabPanel;
     private javax.swing.JMenuBar menu;
     private javax.swing.JMenuItem minimize;
+    private javax.swing.JLabel myListsPlaceholder;
     private javax.swing.JMenu navigate;
     private javax.swing.JTabbedPane navigationTabbedPane;
+    private javax.swing.JPanel recipeOfTheDayPanel;
     private javax.swing.JLabel shoppingCartPlaceholder;
     private javax.swing.JMenuItem undo;
     private javax.swing.JMenu view;
     private javax.swing.JPanel welcomePanel;
     private javax.swing.JLabel welcomePlaceholder;
+    private javax.swing.JPanel welcomeTabPanel;
     private javax.swing.JMenuItem zoomIn;
     private javax.swing.JMenuItem zoomOut;
     // End of variables declaration//GEN-END:variables
